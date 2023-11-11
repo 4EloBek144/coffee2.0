@@ -73,7 +73,6 @@ class MyWidget(QMainWindow):
             que += ", ".join([f"{key}='{self.modified.get(key)}'"
                               for key in self.modified.keys()])
             que += "WHERE id = ?"
-            print(que)
             cur.execute(que, (self.spinBox.text(),))
             self.con.commit()
             self.modified.clear()
